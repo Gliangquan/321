@@ -1,23 +1,14 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 const PdfPage = () => {
-  useEffect(() => {
-    const pdfUrl = '../assets/pdf/web/viewer.html?file=../assets/pdf/demo.pdf';
-    const iframe = document.createElement('iframe');
-    iframe.src = pdfUrl;
-    iframe.width = '100%';
-    iframe.height = '500px';
-    iframe.title = 'PDF Viewer';
-
-    const pdfPageDiv = document.querySelector('.pdf-page');
-    if (pdfPageDiv) {
-      // console.log(1);
-      // pdfPageDiv.appendChild(iframe);
-    }
-  }, []);
-  
   return (
-    <div className="pdf-page">
+    <div className="-pdf-page">
+      <iframe 
+        title="pdf-viewer"
+        src={`${process.env.PUBLIC_URL}/viewer/web/viewer.html?file=${process.env.PUBLIC_URL}/pdfs/demo.pdf`}
+        width="100%"
+        height="600px"
+      />
     </div>
   );
 };
